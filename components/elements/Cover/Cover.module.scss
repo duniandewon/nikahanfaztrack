@@ -1,0 +1,50 @@
+.coverLeft,
+.coverRight,
+.coverRightOut,
+.coverLeftOut {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	opacity: .5;
+}
+
+.coverLeft {
+	left: 0;
+}
+
+.coverRight {
+	right: 0;
+}
+
+.coverLeftOut,
+.coverRightOut {
+	opacity: 0;
+	transition: transform .5s ease-out, opacity .5s ease-out;
+	transition-delay: .4s;
+}
+
+.coverRightOut {
+	transform-origin: right;
+	transform: rotateY(90deg);
+}
+
+.coverLeftOut {
+	transform-origin: left;
+	transform: rotateY(-90deg);
+}
+
+.seal,
+.sealOut {
+	width: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: transform .4s ease-out, opacity .4s ease-out;
+}
+
+.sealOut {
+	opacity: 0;
+	transform: scale(1.1) translate(-50%, -50%);
+}
