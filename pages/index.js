@@ -1,2 +1,2 @@
-import Cover from "../components/elements/Cover";
-export default Cover;
+import Home from '../components/pages/Home'
+export default Home;

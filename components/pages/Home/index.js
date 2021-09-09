@@ -8,7 +8,7 @@ import styles from "./Home.module.scss";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-  const [hasVisited, setHasVisited] = useState(true);
+  const [hasVisited, setHasVisited] = useState(false);
 
   const _renderHomePage = () => (
     <Wrapper>
@@ -35,7 +35,7 @@ const Home = () => {
     if (visited) setHasVisited(true);
   }, []);
 
-  return !hasVisited ? <Cover /> : _renderHomePage();
+  return !hasVisited ? <Cover onOpenCover={() => setHasVisited(true)} /> : _renderHomePage();
 };
 
 export default Home;
