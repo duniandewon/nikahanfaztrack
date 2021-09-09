@@ -1,0 +1,46 @@
+.title {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 30px;
+  font-weight: 100;
+}
+
+.names {
+  max-width: 95vw;
+	font-family: Kallimata;
+	font-size: 70px;
+	margin: 30px 20px;
+
+	p:last-child {
+			text-align: right;
+		}
+
+  span {
+    display: block;
+    text-align: center;
+    font-size: 45px;
+    margin: -20px 0;
+    font-family: Brittany;
+  }
+}
+
+.date {
+	font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+
+	span {
+		font-size: 16px;
+	}
+}
+
+.counterContainer {
+  margin: 30px 20px 0;
+}
+
+.ayat {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.5;
+  margin: 30px 20px 0;
+}
