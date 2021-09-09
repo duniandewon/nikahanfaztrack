@@ -1,0 +1,22 @@
+.counter {
+	display: flex;
+	justify-content: space-between;
+  font-family: Trajan;
+}
+
+.count {
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+
+	> span {
+		&:first-child {
+			font-size: 40px;
+		}
+
+		&:last-child {
+			text-transform: uppercase;
+			font-size: 9px;
+		}
+	}
+}
