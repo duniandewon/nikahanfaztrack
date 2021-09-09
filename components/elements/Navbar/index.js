@@ -5,11 +5,7 @@ import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faGift } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
 
-import home from "../../../public/icons/home.png";
-import vendor from "../../../public/icons/vendor.png";
 import logo from "../../../public/icons/logo.png";
-import gift from "../../../public/icons/gift.png";
-import ucapan from "../../../public/icons/ucapan.png";
 
 import styles from "./Navbar.module.scss";
 
