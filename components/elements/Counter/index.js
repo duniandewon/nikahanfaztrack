@@ -1,7 +1,16 @@
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import styles from './Counter.module.scss'
+
+import en from "../../../public/locales/en/translate";
+import id from "../../../public/locales/id/translate";
+
+import styles from "./Counter.module.scss";
 
 const Counter = () => {
+  const { locale } = useRouter();
+
+  const t = locale === "en" ? en : id;
+
   const getTimeLeft = () => {
     let year = new Date().getFullYear();
 
@@ -38,19 +47,19 @@ const Counter = () => {
     <div className={styles.counter}>
       <div className={styles.count}>
         <span>{timeLeft.days}</span>
-        <span>hari</span>
+        <span>{t.counter.day}</span>
       </div>
       <div className={styles.count}>
         <span>{timeLeft.hours}</span>
-        <span>jam</span>
+        <span>{t.counter.hour}</span>
       </div>
       <div className={styles.count}>
         <span>{timeLeft.minutes}</span>
-        <span>menit</span>
+        <span>{t.counter.minute}</span>
       </div>
       <div className={styles.count}>
         <span>{timeLeft.seconds}</span>
-        <span>detik</span>
+        <span>{t.counter.seconds}</span>
       </div>
     </div>
   );
