@@ -20,7 +20,7 @@ const Navbar = () => {
             <span>beranda</span>
           </a>
         </Link>
-        <Link href="/">
+        <Link href="/vendor">
           <a className={styles.navbarItem}>
             <FontAwesomeIcon icon={faUsers} />
             <span>vendor</span>
@@ -31,13 +31,13 @@ const Navbar = () => {
         <Image src={logo} />
       </div>
       <div className={styles.navbar}>
-        <Link href="/">
+        <Link href="/gift">
           <a className={styles.navbarItem}>
             <FontAwesomeIcon icon={faGift} />
             <span>hadiah</span>
           </a>
         </Link>
-        <Link href="/message">
+        <Link href="/greet">
           <a className={styles.navbarItem}>
             <FontAwesomeIcon icon={faEnvelopeOpenText} /> <span>ucapan</span>
           </a>
