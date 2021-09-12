@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import classnames from 'classnames'
 
 import styles from "./Language.module.scss";
 
