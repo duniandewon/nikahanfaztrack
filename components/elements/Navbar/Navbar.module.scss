@@ -3,6 +3,8 @@
   display: flex;
   padding: 15px 20px;
   box-shadow: 0 -1px 5px -2px #333;
+  position: relative;
+  z-index: 1;
 }
 
 .navbar {
@@ -15,6 +17,10 @@
 .logo {
   width: 180px;
   margin: 0 40px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .navbarItem {
