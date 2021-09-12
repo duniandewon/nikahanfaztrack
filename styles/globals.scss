@@ -1,36 +1,46 @@
 @font-face {
-	font-family: Kallimata;
-	src: url('../public/fonts/KallimataScript-ywYY2.otf');
+  font-family: Kallimata;
+  src: url("../public/fonts/KallimataScript-ywYY2.otf");
 }
 
 @font-face {
-	font-family: Brittany;
-	src: url('../public/fonts/BrittanySignature-MaZx.ttf');
+  font-family: Brittany;
+  src: url("../public/fonts/BrittanySignature-MaZx.ttf");
 }
 
 @font-face {
-	font-family: Trajan;
-	src: url('../public/fonts/TrajanPro-Regular.otf');
+  font-family: Trajan;
+  src: url("../public/fonts/TrajanPro-Regular.otf");
 }
 
 @font-face {
-	font-family: Bodoni;
-	src: url('../public/fonts/Bodoni\ 72.ttc');
+  font-family: Bodoni;
+  src: url("../public/fonts/Bodoni\ 72.ttc");
 }
 
 * {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	font-family: Trajan;
-	color: #f4c782;
+  font-family: Trajan;
+  color: #f4c782;
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+}
+
+input,
+select,
+textarea,
+button,
+option {
+  font-family: inherit;
+  color: inherit;
+  outline: none;
 }
