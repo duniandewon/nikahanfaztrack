@@ -1,0 +1,20 @@
+.container {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  border: 1px solid #f4c782;
+  border-radius: 5px;
+}
+
+.input {
+  width: 100%;
+  border: 0;
+  padding: 10px 10px;
+  background-color: transparent;
+  font-size: 14px;
+
+  &::placeholder {
+    color: rgba($color: #f4c782, $alpha: 0.4);
+    font-size: 14px;
+  }
+}
