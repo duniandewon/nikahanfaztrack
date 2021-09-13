@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import Wrapper from "../../layout/Wrapper";
 
@@ -9,7 +10,7 @@ import Coverleft from "../../../public/images/cover-left.png";
 
 import styles from "./Cover.module.scss";
 
-export default function Cover(props) {
+const Cover = (props) => {
   const [isSealOpen, setIsSealOpen] = useState(false);
 
   const _handleOpenSeal = () => {
@@ -17,7 +18,7 @@ export default function Cover(props) {
     localStorage.setItem("has-visited", 1);
 
     setTimeout(() => {
-    	props.onOpenCover()
+      props.onOpenCover();
     }, 1120);
   };
   return (
@@ -44,4 +45,10 @@ export default function Cover(props) {
       </div>
     </Wrapper>
   );
-}
+};
+
+Cover.propTypes = {
+  onOpenCover: PropTypes.func.isRequired,
+};
+
+export default Cover;
