@@ -28,7 +28,7 @@ const GreetingsList = ({ messages }) => {
     });
   };
 
-  const _renderNoGreeting = () => <h2>Be the first to say hi</h2>;
+  const _renderNoGreeting = () => <h2 className={styles.sayHiFirst}>Be the first to say hi</h2>;
 
   return messages && !!messages.length
     ? _renderGreetings()
