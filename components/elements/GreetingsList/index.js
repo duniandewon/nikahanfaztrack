@@ -16,7 +16,7 @@ const GreetingsList = ({ messages }) => {
   };
 
   const _renderGreetings = () => {
-    return messages.map(({ _id, name, message, date }) => {
+    return messages.map(({ _id, name, message }) => {
       console.log(getDate(_id));
       return (
         <div className={styles.container} key={_id}>
@@ -42,7 +42,7 @@ GreetingsList.propTypes = {
       message: PropTypes.string,
       date: PropTypes.string,
     })
-  ).isRequired,
+  ),
 };
 
 export default GreetingsList;
