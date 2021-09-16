@@ -40,7 +40,6 @@ const Home = (props) => {
   );
 
   useEffect(() => {
-    console.log("Router: ", props);
     const visited = localStorage.getItem("has-visited");
 
     if (visited) setHasVisited(true);

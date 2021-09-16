@@ -40,7 +40,6 @@ const Greet = () => {
   };
 
   useEffect(() => {
-    console.log(data && data);
     data && setMessages(data.data);
   }, [data]);
 

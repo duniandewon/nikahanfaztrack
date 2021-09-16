@@ -17,7 +17,6 @@ const GreetingsList = ({ messages }) => {
 
   const _renderGreetings = () => {
     return messages.map(({ _id, name, message }) => {
-      console.log(getDate(_id));
       return (
         <div className={styles.container} key={_id}>
           <h3 className={styles.name}>{name}</h3>
@@ -28,7 +27,9 @@ const GreetingsList = ({ messages }) => {
     });
   };
 
-  const _renderNoGreeting = () => <h2 className={styles.sayHiFirst}>Be the first to say hi</h2>;
+  const _renderNoGreeting = () => (
+    <h2 className={styles.sayHiFirst}>Be the first to say hi</h2>
+  );
 
   return messages && !!messages.length
     ? _renderGreetings()
