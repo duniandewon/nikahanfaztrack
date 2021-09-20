@@ -1,43 +1,55 @@
-import nextConnect from "next-connect";
-import middleware from "../../middleware/database";
+import connectDB from "../../utils/connectDB";
 
-const handler = nextConnect();
-
-handler.use(middleware);
-
-handler.get(async (req, res) => {
+const getMessages = () => async (req, res) => {
   try {
-    let doc = await req.db.collection("greet").find().toArray();
+    const db = await connectDB();
+    const collection = await db.collection("greet");
+    const greetings = await collection.find({}).toArray();
 
-    res.json({
-      status: res.statusCode,
+    res.status(200).json({
+      status: 200,
       success: true,
       message: "successfully got all messages",
-      data: doc,
+      data: greetings,
     });
   } catch (err) {
-    res.statusCode = 400;
-    res.json({ status: res.statusCode, success: false, message: err.message });
+    res.status(400).json({
+      status: 400,
+      success: false,
+      message: err.message,
+    });
   }
-});
+};
 
-handler.post(async (req, res) => {
+const postNewMessage = () => async (req, res) => {
+  const message = {
+    ...req.body,
+    date: new Date(),
+  };
+
   try {
-    const message = {
-      ...req.body,
-      date: new Date(),
-    };
-    await req.db.collection("greet").insertOne(message);
+    const db = await connectDB();
+    const collection = await db.collection("greet");
 
-    res.json({
-      status: res.statusCode,
+    await collection.insertOne(message);
+
+    res.status(200).json({
+      status: 200,
       success: true,
       message: "successfully sent a message",
     });
   } catch (err) {
-    res.statusCode = 400;
-    res.json({ status: res.statusCode, success: false, message: err.message });
+    res.status(400).json({
+      status: 400,
+      success: false,
+      message: err.message,
+    });
   }
-});
+};
+
+const handler = (req, res) => {
+  if (req.method === "GET") getMessages()(req, res);
+  if (req.method === "POST") postNewMessage()(req, res);
+};
 
 export default handler;
