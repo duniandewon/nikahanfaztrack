@@ -18,7 +18,7 @@ const Greet = () => {
   const [messages, setMessages] = useState([]);
 
   const { mutate } = useSWRConfig();
-  const { data } = useSWR("/api/greet");
+  const { data, error } = useSWR("/api/greet");
 
   const resetForm = () => {
     setName("");
@@ -26,11 +26,7 @@ const Greet = () => {
   };
 
   const sendGreeting = async () => {
-    mutate(
-      "/api/greet",
-      { data: [...data.data, { name, message }] },
-      false
-    );
+    mutate("/api/greet", { data: [...data.data, { name, message }] }, false);
 
     await axios.post("/api/greet", { name, message });
 
@@ -41,6 +37,8 @@ const Greet = () => {
 
   useEffect(() => {
     data && setMessages(data.data);
+
+    error && console.log("Greet error: ", error)
   }, [data]);
 
   return (
