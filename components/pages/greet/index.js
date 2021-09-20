@@ -18,7 +18,7 @@ const Greet = () => {
   const [messages, setMessages] = useState([]);
 
   const { mutate } = useSWRConfig();
-  const { data } = useSWR("https://nikahanfaztrack-gibz8drwf-duniandewon.vercel.app//api/greet");
+  const { data } = useSWR("/api/greet");
 
   const resetForm = () => {
     setName("");
@@ -27,14 +27,14 @@ const Greet = () => {
 
   const sendGreeting = async () => {
     mutate(
-      "https://nikahanfaztrack-gibz8drwf-duniandewon.vercel.app//api/greet",
+      "/api/greet",
       { data: [...data.data, { name, message }] },
       false
     );
 
-    await axios.post("https://nikahanfaztrack-gibz8drwf-duniandewon.vercel.app//api/greet", { name, message });
+    await axios.post("/api/greet", { name, message });
 
-    mutate("https://nikahanfaztrack-gibz8drwf-duniandewon.vercel.app//api/greet");
+    mutate("/api/greet");
 
     resetForm();
   };
