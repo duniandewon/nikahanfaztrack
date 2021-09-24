@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import useSWR, { useSWRConfig } from "swr";
+import { useState } from "react";
+
+import useSwr from "../../../utils/useSwr";
 
 import Wrapper from "../../layout/Wrapper";
 import Navbar from "../../elements/Navbar";
@@ -15,31 +15,19 @@ import styles from "./Greet.module.scss";
 const Greet = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
-
-  const { mutate } = useSWRConfig();
-  const { data, error } = useSWR("/api/greet");
 
   const resetForm = () => {
     setName("");
     setMessage("");
   };
 
-  const sendGreeting = async () => {
-    mutate("/api/greet", { data: [...data.data, { name, message }] }, false);
+  const { loading, messages, sendGreeting } = useSwr();
 
-    await axios.post("/api/greet", { name, message });
-
-    mutate("/api/greet");
+  const handleSendGreeting = () => {
+    sendGreeting({ name, message });
 
     resetForm();
   };
-
-  useEffect(() => {
-    data && setMessages(data.data);
-
-    error && console.log("Greet error: ", error)
-  }, [data]);
 
   return (
     <Wrapper>
@@ -60,12 +48,16 @@ const Greet = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button disabled={!name || !message} onClick={sendGreeting}>
+        <button disabled={!name || !message} onClick={handleSendGreeting}>
           send
         </button>
       </div>
       <div className={styles.greetingsContainer}>
-        <Greetings messages={messages} />
+        {loading ? (
+          <p className={styles.loading}>loading all your beatifull messages</p>
+        ) : (
+          <Greetings messages={messages} />
+        )}
       </div>
       <Language />
       <Footer />
