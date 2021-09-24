@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
     <SWRConfig
       value={{ fetcher: (url) => axios.get(url).then((res) => res.data) }}
     >
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </SWRConfig>
   );
 }

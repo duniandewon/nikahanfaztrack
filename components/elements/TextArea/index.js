@@ -15,6 +15,7 @@ const TextArea = (props) => {
         placeholder={placeholder}
         onChange={onChange}
         onKeyPress={onKeyPress}
+        maxLength="280"
       />
     </div>
   );
