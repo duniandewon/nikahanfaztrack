@@ -12,9 +12,10 @@
   padding: 10px 10px;
   background-color: transparent;
   font-size: 14px;
+  color: #59827f;
 
   &::placeholder {
-    color: rgba($color: #f4c782, $alpha: 0.4);
+    color: rgba($color: #59827f, $alpha: 0.4);
     font-size: 14px;
   }
 }
