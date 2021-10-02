@@ -12,7 +12,7 @@ import Footer from "../../elements/Footer";
 import Languge from "../../elements/Language";
 import styles from "./Home.module.scss";
 
-const Home = (props) => {
+const Home = () => {
   const [hasVisited, setHasVisited] = useState(false);
 
   const { locale } = useRouter();

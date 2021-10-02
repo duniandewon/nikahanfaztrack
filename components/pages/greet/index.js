@@ -1,6 +1,10 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 import useSwr from "../../../utils/useSwr";
+
+import en from "../../../public/locales/en/translate";
+import id from "../../../public/locales/id/translate";
 
 import Wrapper from "../../layout/Wrapper";
 import Navbar from "../../elements/Navbar";
@@ -15,6 +19,10 @@ import styles from "./Greet.module.scss";
 const Greet = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+
+  const { locale } = useRouter();
+
+  const t = locale === "en" ? en : id;
 
   const resetForm = () => {
     setName("");
@@ -37,24 +45,24 @@ const Greet = () => {
           type="text"
           id="name"
           name="name"
-          placeholder="name"
+          placeholder={t.greetPage.name}
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextArea
-          placeholder="message"
+          placeholder={t.greetPage.message}
           id="message"
           name="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
         <button disabled={!name || !message} onClick={handleSendGreeting}>
-          send
+        {t.greetPage.send}
         </button>
       </div>
       <div className={styles.greetingsContainer}>
         {loading ? (
-          <p className={styles.loading}>loading all your beatifull messages</p>
+          <p className={styles.loading}>{t.greetPage.loading}</p>
         ) : (
           <Greetings messages={messages} />
         )}

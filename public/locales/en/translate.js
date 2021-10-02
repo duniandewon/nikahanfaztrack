@@ -14,4 +14,11 @@ export default {
     top: "this website is designed and build by:",
     bottom: "the bride and the groom",
   },
+  greetPage: {
+    title: "send greetings",
+    loading: "loading your beautiful messages",
+    send: "send",
+    name: "name",
+    message: "message",
+  },
 };
