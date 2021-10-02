@@ -31,7 +31,7 @@ const Gift = () => {
 
         <p className={styles.paypal}>
           <span>Paypal</span>
-          <a target="_blank" href="https://www.paypal.me/nanhanan">
+          <a target="_blank" href="https://www.paypal.me/nanhanan" rel="noreferrer">
             https://www.paypal.me/nanhanan
           </a>
         </p>
