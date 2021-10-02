@@ -21,4 +21,10 @@ export default {
     name: "nama",
     message: "pesan",
   },
+  giftPage: {
+    title: "hadiah",
+    sendGift: "kirim hadiah ke",
+    or: "atau",
+    acct: "a/n",
+  },
 };

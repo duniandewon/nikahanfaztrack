@@ -21,4 +21,10 @@ export default {
     name: "name",
     message: "message",
   },
+  giftPage: {
+    title: "gift",
+    sendGift: "send gifts to",
+    or: "or",
+    acct: "acct",
+  },
 };

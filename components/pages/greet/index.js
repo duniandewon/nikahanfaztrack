@@ -57,7 +57,7 @@ const Greet = () => {
           onChange={(e) => setMessage(e.target.value)}
         />
         <button disabled={!name || !message} onClick={handleSendGreeting}>
-        {t.greetPage.send}
+          {t.greetPage.send}
         </button>
       </div>
       <div className={styles.greetingsContainer}>
