@@ -1,29 +1,29 @@
 .wrapper {
-	width: 100%;
-	max-width: 375px;
-	min-height: 100vh;
-	margin: 0 auto;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  width: 100%;
+  max-width: 425px;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-	@media only screen and (min-width: 376px) {
-		min-height: 95vh;
-		margin: 20px auto;
-		border-radius: 8px;
-	}
+  @media only screen and (min-width: 426px) {
+    min-height: 95vh;
+    margin: 20px auto;
+    border-radius: 8px;
+  }
 }
 
 .background {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 
-	@media only screen and (min-width: 376px) {
-		border-radius: 8px;
-	}
+  @media only screen and (min-width: 426px) {
+    border-radius: 8px;
+  }
 }
