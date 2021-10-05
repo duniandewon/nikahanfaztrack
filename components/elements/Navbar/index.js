@@ -36,6 +36,7 @@ const Navbar = () => {
             className={styles.watchOnYoutube}
             href="https://www.youtube.com/watch?v=U6WdBN3e7RQ"
             target="_blank"
+            rel="noreferrer"
           >
             watch on youtube
           </a>
