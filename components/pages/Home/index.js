@@ -20,7 +20,7 @@ const Home = () => {
   const t = locale === "en" ? en : id;
 
   const _renderHomePage = () => (
-    <Wrapper>
+    <Wrapper title={t.navBar.home}>
       <h1 className={styles.title}>{t.title}</h1>
       <div className={styles.names}>
         <p>Hanan</p>

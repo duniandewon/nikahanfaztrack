@@ -38,7 +38,7 @@ const Greet = () => {
   };
 
   return (
-    <Wrapper>
+    <Wrapper title={t.navBar.greet}>
       <h1 className={styles.title}> send greetings</h1>
       <div className={styles.formContainer}>
         <TextField

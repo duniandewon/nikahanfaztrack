@@ -16,7 +16,7 @@ const Gift = () => {
   const t = locale === "en" ? en : id;
 
   return (
-    <Wrapper>
+    <Wrapper title={t.navBar.gift}>
       <h1 className={styles.title}>{t.giftPage.title}</h1>
 
       <div className={styles.sendGift}>
