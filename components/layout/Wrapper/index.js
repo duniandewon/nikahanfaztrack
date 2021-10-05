@@ -8,7 +8,7 @@ import styles from "./Wrapper.module.scss";
 const Wrapper = (props) => {
   const { children, title } = props;
 
-  const pageTitle = title.charAt(0).toUpperCase() + title.slice(1)
+  const pageTitle = title?.charAt(0).toUpperCase() + title?.slice(1)
 
   return (
     <Fragment>
