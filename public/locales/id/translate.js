@@ -27,4 +27,11 @@ export default {
     or: "atau",
     acct: "a/n",
   },
+  navBar: {
+    home: "branda",
+    vendor: "vendor",
+    gift: "hadiah",
+    greet: "ucapan",
+    watchOnYt: "tonton di youtube",
+  },
 };

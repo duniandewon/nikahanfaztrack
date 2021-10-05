@@ -1,4 +1,8 @@
 import { useState, Fragment } from "react";
+import { useRouter } from "next/router";
+
+import en from "../../../public/locales/en/translate";
+import id from "../../../public/locales/id/translate";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +20,12 @@ import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
+
+  const { locale } = useRouter();
+
+  const {
+    navBar: { watchOnYt, home, vendor, gift, greet },
+  } = locale === "en" ? en : id;
 
   const _handleToggleModal = () => setShowModal(!showModal);
 
@@ -38,7 +48,7 @@ const Navbar = () => {
             target="_blank"
             rel="noreferrer"
           >
-            watch on youtube
+            {watchOnYt}
           </a>
         </div>
       </Modal>
@@ -51,13 +61,13 @@ const Navbar = () => {
         <Link href="/">
           <a className={styles.navbarItem}>
             <FontAwesomeIcon icon={faHome} />
-            <span>beranda</span>
+            <span>{home}</span>
           </a>
         </Link>
         <Link href="/vendor">
           <a className={styles.navbarItem}>
             <FontAwesomeIcon icon={faUsers} />
-            <span>vendor</span>
+            <span>{vendor}</span>
           </a>
         </Link>
       </div>
@@ -70,12 +80,12 @@ const Navbar = () => {
         <Link href="/gift">
           <a className={styles.navbarItem}>
             <FontAwesomeIcon icon={faGift} />
-            <span>hadiah</span>
+            <span>{gift}</span>
           </a>
         </Link>
         <Link href="/greet">
           <a className={styles.navbarItem}>
-            <FontAwesomeIcon icon={faEnvelopeOpenText} /> <span>ucapan</span>
+            <FontAwesomeIcon icon={faEnvelopeOpenText} /> <span>{greet}</span>
           </a>
         </Link>
       </div>

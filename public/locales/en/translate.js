@@ -27,4 +27,11 @@ export default {
     or: "or",
     acct: "acct",
   },
+  navBar: {
+    home: "home",
+    vendor: "vendor",
+    gift: "gift",
+    greet: "greet",
+    watchOnYt: "watch on youtube",
+  },
 };
