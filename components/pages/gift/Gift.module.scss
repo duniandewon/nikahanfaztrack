@@ -59,3 +59,19 @@
     letter-spacing: 1px;
   }
 }
+
+.qrbca {
+  width: 170px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+   img {
+    width: 100%;
+    // height: 100%;
+  }
+}
+
+.qrbcaModal {
+  width: 100%;
+}
