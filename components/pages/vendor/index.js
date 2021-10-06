@@ -39,7 +39,7 @@ const Vendor = () => {
 
   const _renderVendorItem = () => {
     return vendors.map(({ name, vendor }) => (
-      <div className={styles.vendorItem}>
+      <div className={styles.vendorItem} key={name}>
         <p>{vendor}:</p>
         <a
           href={`https://www.instagram.com/${name}`}
