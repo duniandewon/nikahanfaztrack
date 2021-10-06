@@ -35,7 +35,7 @@ const Gift = () => {
   };
 
   return (
-    <Wrapper title={t.navBar.gift}>
+    <Wrapper title={t.giftPage.title}>
       {renderModal()}
       <h1 className={styles.title}>{t.giftPage.title}</h1>
 
