@@ -31,7 +31,7 @@ const Vendor = () => {
     { name: "music_al_atraf", vendor: "music" },
     { name: "tritynco", vendor: "documentation" },
     { name: "inspirasawedding", vendor: "documentation" },
-    { name: "music_al_atraf", vendor: "Photo booth" },
+    { name: "fotoboothindonesia", vendor: "Photo booth" },
     { name: "jasa.livestreaming.profesional", vendor: "Live Stream" },
     { name: "deflower_id", vendor: "bridal flower & corsage" },
     { name: "hnailbar", vendor: "nail art" },
