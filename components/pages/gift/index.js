@@ -6,9 +6,6 @@ import en from "../../../public/locales/en/translate";
 import id from "../../../public/locales/id/translate";
 
 import Wrapper from "../../layout/Wrapper";
-import Navbar from "../../elements/Navbar";
-import Language from "../../elements/Language";
-import Footer from "../../elements/Footer";
 import Modal from "../../layout/Modal";
 
 import Qrbca from "../../../public/images/qrbca.jpeg";
@@ -74,10 +71,6 @@ const Gift = () => {
       <div className={styles.qrbca} onClick={_handleToggleModal}>
         <Image src={Qrbca} />
       </div>
-
-      <Footer />
-      <Navbar />
-      <Language />
     </Wrapper>
   );
 };

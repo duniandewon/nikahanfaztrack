@@ -7,9 +7,6 @@ import en from "../../../public/locales/en/translate";
 import id from "../../../public/locales/id/translate";
 
 import Wrapper from "../../layout/Wrapper";
-import Navbar from "../../elements/Navbar";
-import Footer from "../../elements/Footer";
-import Language from "../../elements/Language";
 import TextField from "../../elements/TextField";
 import TextArea from "../../elements/TextArea";
 import Greetings from "../../elements/GreetingsList";
@@ -67,9 +64,6 @@ const Greet = () => {
           <Greetings messages={messages} />
         )}
       </div>
-      <Language />
-      <Footer />
-      <Navbar />
     </Wrapper>
   );
 };

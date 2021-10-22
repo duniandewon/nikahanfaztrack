@@ -1,13 +1,9 @@
 import { useRouter } from "next/router";
-import { Fragment } from "react";
 
 import en from "../../../public/locales/en/translate";
 import id from "../../../public/locales/id/translate";
 
 import Wrapper from "../../layout/Wrapper";
-import Navbar from "../../elements/Navbar";
-import Footer from "../../elements/Footer";
-import Language from "../../elements/Language";
 
 import styles from "./Vendor.module.scss";
 
@@ -56,9 +52,6 @@ const Vendor = () => {
     <Wrapper title="vendor">
       <h1 className={styles.title}>vendor</h1>
       <div className={styles.vendorsList}>{_renderVendorItem()}</div>
-      <Language />
-      <Footer />
-      <Navbar />
     </Wrapper>
   );
 };

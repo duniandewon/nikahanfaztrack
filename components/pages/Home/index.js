@@ -6,10 +6,7 @@ import id from "../../../public/locales/id/translate";
 
 import Wrapper from "../../layout/Wrapper";
 import Counter from "../../elements/Counter";
-import Navbar from "../../elements/Navbar";
 import Cover from "../../elements/Cover";
-import Footer from "../../elements/Footer";
-import Languge from "../../elements/Language";
 import styles from "./Home.module.scss";
 
 const Home = () => {
@@ -18,6 +15,10 @@ const Home = () => {
   const { locale } = useRouter();
 
   const t = locale === "en" ? en : id;
+
+  const _handleToggleHasVisited = () => {
+    setHasVisited(!hasVisited);
+  };
 
   const _renderHomePage = () => (
     <Wrapper title={t.navBar.home}>
@@ -33,23 +34,20 @@ const Home = () => {
       <div className={styles.counterContainer}>
         <Counter />
       </div>
-      <Footer />
-      <Navbar />
-      <Languge />
     </Wrapper>
   );
+
+  const _renderCoverPage = () => {
+    return <Cover onOpenCover={_handleToggleHasVisited} />;
+  };
 
   useEffect(() => {
     const visited = localStorage.getItem("has-visited");
 
-    if (visited) setHasVisited(true);
+    if (visited) _handleToggleHasVisited();
   }, []);
 
-  return !hasVisited ? (
-    <Cover onOpenCover={() => setHasVisited(true)} />
-  ) : (
-    _renderHomePage()
-  );
+  return !hasVisited ? _renderCoverPage() : _renderHomePage();
 };
 
 export const getStaticProp = async ({ locale }) => {

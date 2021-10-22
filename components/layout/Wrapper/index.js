@@ -1,21 +1,23 @@
 import { Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+
+import Navbar from "../../elements/Navbar";
+import Languge from "../../elements/Language";
+import Footer from "../../elements/Footer";
 
 import styles from "./Wrapper.module.scss";
 
 const Wrapper = (props) => {
   const { children, title } = props;
 
-  const pageTitle = title?.charAt(0).toUpperCase() + title?.slice(1)
+  const pageTitle = title?.charAt(0).toUpperCase() + title?.slice(1);
 
   return (
     <Fragment>
       <Head>
-        <title>
-          nikahanfaztrack.com | {pageTitle}
-        </title>
+        <title>nikahanfaztrack.com | {pageTitle}</title>
       </Head>
       <div className={styles.wrapper}>
         <Image
@@ -25,6 +27,9 @@ const Wrapper = (props) => {
           layout="fill"
         />
         {children}
+        <Footer />
+        <Navbar />
+        <Languge />
       </div>
     </Fragment>
   );
@@ -33,6 +38,6 @@ const Wrapper = (props) => {
 Wrapper.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node.isRequired,
-}
+};
 
 export default Wrapper;
